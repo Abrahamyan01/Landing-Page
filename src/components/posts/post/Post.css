@@ -1,0 +1,39 @@
+.post {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post h5 {
+    color: #EB0028;
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.post h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.post span {
+    color: #9B9B9B;
+    font-size: .8rem;
+}
+
+.post span b {
+    color: black;
+    margin-right: 10px;
+}
+
+.post p {
+    color: #929292;
+    font-size: .9rem;
+}
+
+@media (max-width:420px) {
+    .post {
+        max-width: 310px;
+    }
+}

@@ -1,0 +1,30 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #E9E9E9;
+    border-top: 1px solid #E9E9E9;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+}
+
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.nav ul li {
+    cursor: pointer;
+}
+
+@media (max-width:1200px) {
+    .nav {
+        display: none;
+    }
+
+}

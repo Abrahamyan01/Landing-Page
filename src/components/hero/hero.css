@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 80px;
+}
+
+.first {
+    background: url("../../images/first.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 595px;
+    height: 695px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.first div p {
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.06em;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.first div h3 {
+    text-align: center;
+    color: white;
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    font-family: 'Caveat', cursive;
+}
+
+.second {
+    background: #F4F4F4;
+    width: 595px;
+    height: 695px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.second p {
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: #262626;
+    text-align: center;
+    letter-spacing: 0.06em;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.second h3 {
+    text-align: center;
+    color: #262626;
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    font-family: 'Caveat', cursive;
+}
+
+.second h4 {
+    color: #747474;
+    text-align: center;
+    letter-spacing: -0.02em;
+    font-size: 1.1rem;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.second a {
+    color: #262626;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.third {
+    background: url("../../images/third.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 595px;
+    height: 695px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.third div p {
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.06em;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.third div h3 {
+    text-align: center;
+    color: white;
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    font-family: 'Caveat', cursive;
+}
+
+@media (max-width:1024px) {
+    .hero {
+        padding: 80px 0;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .first,
+    .second,
+    .third {
+        width: 410px;
+        height: 500px;
+    }
+
+    .first div h3,
+    .second h3,
+    .third div h3 {
+        font-size: 1.5rem;
+    }
+
+    .second h4 {
+        font-size: .8rem;
+    }
+}
+
+@media (max-width:420px) {
+    .hero {
+        display: none;
+    }
+}

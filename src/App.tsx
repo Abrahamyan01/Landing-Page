@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from "react";
+import { Header } from "./components/header/Header"
+import { NavMobile } from "./components/navbar/mobile/NavMobile";
+import { NavBar } from "./components/navbar/NavBar";
+import { Hero } from "./components/hero/Hero";
+import { Posts } from "./components/posts/Posts";
+import { IPosts } from "./types";
+import Modal from "./components/modal/Modal";
+import useScrollDirection from './components/navbar/useScrollDirection'
+import onChange from "./components/navbar/onChange";
+import axios from 'axios'
 import './App.css';
 
-function App() {
+const App = () => {
+  const [data, setData] = useState<IPosts[]>([])
+  const [filter, setFilter] = useState<string>("")
+  const [hide, setHide] = useState<object>({})
+  const [active, setActive] = useState<boolean>(false)
+  const [children, setChildren] = useState<IPosts>(data[0])
+  const [menu, setMenu] = useState<boolean>(false)
+  const scroll = useScrollDirection()
+
+  useEffect(() => {
+    async function getData() {
+      const response = await axios.get("https://cloud.codesupply.co/endpoint/react/data.json")
+      setData(response.data)
+    }
+    getData()
+  }, [])
+
+  useEffect(() => {
+    onChange({ hide, setHide, scroll })
+  }, [scroll])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header setFilter={setFilter} setMenu={setMenu} />
+      <NavMobile menu={menu} setMenu={setMenu} />
+      <NavBar hide={hide} />
+      <Hero />
+      <Posts data={data} filter={filter} setActive={setActive} setChildren={setChildren} />
+      <Modal active={active} setActive={setActive} children={children} />
     </div>
-  );
+  )
 }
+export default App
 
-export default App;
